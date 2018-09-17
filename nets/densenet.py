@@ -30,7 +30,7 @@ def block(net, layers, growth, scope='block'):
     return net
 
 
-def densenet(images, num_classes=764, is_training=False,
+def densenet(images, num_classes=1001, is_training=False,
              dropout_keep_prob=0.8,
              scope='densenet'):
     """Creates a variant of the densenet model.
