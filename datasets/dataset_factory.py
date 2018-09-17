@@ -30,6 +30,7 @@ datasets_map = {
     'quiz': quiz,
     'imagenet': imagenet,
     'mnist': mnist,
+    'car': car,
 }
 
 
