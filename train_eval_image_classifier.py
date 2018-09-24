@@ -48,6 +48,10 @@ if __name__ == '__main__':
         ckpt = ''
     for i in range(FLAGS.epoch):
         steps = int(step_per_epoch * (i + 1))
+        
+        if i != 0:
+            ckpt = ''
+        
         # train 1 epoch
         print('################    train {0}   ################'.format(i+1))
         p = os.popen(train_cmd.format(**{'dataset_name': FLAGS.dataset_name, 'dataset_dir': FLAGS.dataset_dir,
