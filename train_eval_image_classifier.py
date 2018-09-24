@@ -48,7 +48,7 @@ if __name__ == '__main__':
     for i in range(30):
         steps = int(step_per_epoch * (i + 1))
         # train 1 epoch
-        print('################    train    ################')
+        print('################    train {0}   ################'.format(i))
         p = os.popen(train_cmd.format(**{'dataset_name': FLAGS.dataset_name, 'dataset_dir': FLAGS.dataset_dir,
                                          'model_name': FLAGS. model_name,
                                          'checkpoint_exclude_scopes': FLAGS.checkpoint_exclude_scopes, 'train_dir': FLAGS. train_dir,
@@ -58,7 +58,7 @@ if __name__ == '__main__':
             print(l.strip())
 
         # eval
-        print('################    eval    ################')
+        print('################    eval {0}   ################'.format(i))
         p = os.popen(eval_cmd.format(**{'dataset_name': FLAGS.dataset_name, 'dataset_dir': FLAGS.dataset_dir,
                                         'dataset_split_name': 'validation', 'model_name': FLAGS. model_name,
                                         'checkpoint_path': FLAGS.train_dir, 'batch_size': FLAGS.batch_size,
